@@ -247,8 +247,16 @@ function goTo(n) {
 
 function showLines(){
   const pickupLines = [
-    { emoji: "😊", text: "Together we'd be pretty cute. 🐮" },
-    { emoji: "🔍", text: "Are you Google? You have everything I search for. 💕" }
+    { emoji: "😊", text: "I'm pretty and you're cute. Together we’d be pretty cute. 🐮" },
+    { emoji: "🔍", text: "Are you Google? You have everything I search for. 💕" },
+    { emoji: "😚", text: "I thought happiness started with an H. Why does mine start with U? 🥰" },
+    { emoji: "🐱", text: "Can you lend me a kiss? I promise I’ll give it back. 💋" },
+    { emoji: "✨", text: "I’ve been wondering, do your lips taste as good as they look? 👀" },
+    { emoji: "💤", text: "Do you like sleeping? Me too. We should do it together sometime. 🩵" },
+    { emoji: "😳", text: "I love my bed, but I’d rather be in yours. 🛌" },
+    { emoji: "🏕️", text: "Are you a campfire? Because you’re hot and I want s’more. 🔥" },
+    { emoji: "🫜", text: "Are you the square root of 100? Because you’re a solid 10. 😘" },
+    { emoji: "⚡️", text: "I'm no electrician but I can light up your day. 🔋" }
   ];
   const pick = pickupLines[Math.floor(Math.random() * pickupLines.length)];
   document.getElementById('line-emoji').textContent = pick.emoji;
