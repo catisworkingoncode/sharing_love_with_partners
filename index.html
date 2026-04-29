@@ -29,10 +29,8 @@
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🐱%3C/text%3E%3C/svg%3E") 16 16, auto;
   }
 
-  /* ── Floating background particles ── */
   #bg-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
-  /* ── Screen system ── */
   .screen {
     position: fixed; inset: 0;
     display: flex; flex-direction: column;
@@ -43,7 +41,6 @@
   }
   .screen.active { opacity: 1; pointer-events: all; }
 
-  /* ── Dots nav ── */
   #dots {
     position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
     display: flex; gap: 8px; z-index: 100;
@@ -54,7 +51,6 @@
   }
   .dot.active { background: var(--deep-pink); transform: scale(1.4); }
 
-  /* ── Cards ── */
   .card {
     background: white;
     border-radius: 32px;
@@ -71,7 +67,7 @@
     background: linear-gradient(90deg, var(--pink), var(--lavender), var(--peach), var(--teal));
   }
 
-  h1, h2 { font-family: 'Playfair Display', serif; }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
   .emoji-big { font-size: 4rem; display: block; margin-bottom: 1rem; animation: bounce 2s infinite; }
   @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -88,84 +84,36 @@
   .btn-purple { background: linear-gradient(135deg, var(--deep-purple), var(--lavender)); color: white; box-shadow: 0 4px 20px rgba(139,92,246,0.4); }
   .btn-teal { background: linear-gradient(135deg, var(--teal), #38b89a); color: white; box-shadow: 0 4px 20px rgba(94,207,177,0.4); }
 
-  /* ─────────────────────────────────────────
-     SCREEN 1 — WELCOME
-  ───────────────────────────────────────── */
   #s1 { background: linear-gradient(160deg, #fff0f5 0%, #fde8f8 50%, #e8f4ff 100%); }
   #s1 h1 { font-size: 2.2rem; color: var(--deep-pink); margin-bottom: 0.5rem; }
-  #s1 p { color: #888; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.8rem; }
   .hearts-row { font-size: 1.4rem; margin-bottom: 1rem; letter-spacing: 4px; }
 
-  /* ─────────────────────────────────────────
-     SCREEN 2 — BOBBA TEA (FIXED)
-  ───────────────────────────────────────── */
   #s2 { background: linear-gradient(160deg, #fff5e0 0%, #ffe0f0 100%); }
   #s2 h2 { font-size: 2rem; color: var(--deep-pink); margin: 1rem 0 0.5rem; }
-  #s2 p { color: #aaa; font-size: 0.9rem; margin-bottom: 1.5rem; }
   .yn-row { display: flex; gap: 1rem; justify-content: center; align-items: center; }
-  #yes-btn { 
-    background: linear-gradient(135deg,#5ecfb1,#38b89a); 
-    color:white; padding:0.8rem 2.8rem; border-radius:999px; border:none; 
-    font-weight:800; cursor:pointer; z-index: 1000; position:relative;
-  }
-  #no-btn { 
-    background: linear-gradient(135deg,#f87171,#e84040); 
-    color:white; padding:0.8rem 2rem; border-radius:999px; border:none; 
-    font-weight:800; cursor:pointer; position:absolute; 
-  }
+  #yes-btn { background: linear-gradient(135deg,#5ecfb1,#38b89a); color:white; padding:0.8rem 2.8rem; border-radius:999px; border:none; font-weight:800; cursor:pointer; z-index:1000; position:relative; }
+  #no-btn { background: linear-gradient(135deg,#f87171,#e84040); color:white; padding:0.8rem 2rem; border-radius:999px; border:none; font-weight:800; cursor:pointer; position:absolute; }
 
-  /* ─────────────────────────────────────────
-     SCREEN 3 — PICK-UP LINES
-  ───────────────────────────────────────── */
   #s3 { background: linear-gradient(160deg, #f0e8ff 0%, #ffe0f5 100%); }
   #s3 h2 { font-size: 1.8rem; color: var(--deep-pink); margin-bottom: 1.5rem; }
-  .line-card {
-    background: linear-gradient(135deg, #f9f0ff, #fff0f8);
-    border-radius: 20px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; text-align: left;
-    border: 1.5px solid rgba(224,92,138,0.15);
-  }
+  .line-card { background: linear-gradient(135deg, #f9f0ff, #fff0f8); border-radius: 20px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; text-align: left; border: 1.5px solid rgba(224,92,138,0.15); }
 
-  /* ─────────────────────────────────────────
-     SCREEN 4 — LOVE CONFESSIONS (CAROUSEL)
-  ───────────────────────────────────────── */
   #s4 { background: linear-gradient(160deg, #fff0e8 0%, #ffe8f0 100%); }
   #s4 h2 { font-size: 1.8rem; color: var(--deep-pink); margin-bottom: 1.5rem; }
-  .confession-card {
-    background: white; border-radius: 20px; padding: 1.5rem;
-    display: none; flex-direction: column; align-items: center;
-    opacity: 0; transform: scale(0.9); transition: 0.5s;
-  }
+  .confession-card { background: white; border-radius: 20px; padding: 1.5rem; display: none; flex-direction: column; align-items: center; opacity: 0; transform: scale(0.9); transition: 0.5s; }
   .confession-card.active { display: flex; opacity: 1; transform: scale(1); }
   .conf-dot { width:7px; height:7px; border-radius:50%; background:#ddd; transition:background 0.3s; }
   .conf-dot.active { background: var(--deep-pink); }
 
-  /* ─────────────────────────────────────────
-     SCREEN 5 — SCRATCH REVEAL
-  ───────────────────────────────────────── */
   #s5 { background: linear-gradient(160deg, #e8fff8 0%, #f0ffea 100%); }
   #s5 h2 { font-size: 1.8rem; color: var(--deep-pink); margin-bottom: 0.4rem; }
-  .scratch-wrap { position: relative; width: 100%; max-width: 340px; margin: 0 auto 1.5rem; border-radius: 20px; overflow: hidden; }
-  #reveal-content {
-    background: linear-gradient(135deg, #e8fff8, #f0fff4);
-    padding: 1.5rem; text-align: center; border-radius: 20px; border: 2px dashed var(--teal);
-  }
-  #scratch-canvas { position:absolute; inset:0; border-radius:20px; cursor: crosshair; }
+  .scratch-wrap { position: relative; width: 100%; max-width: 340px; min-height: 180px; margin: 0 auto 1.5rem; border-radius: 20px; overflow: hidden; }
+  #reveal-content { background: linear-gradient(135deg, #e8fff8, #f0fff4); padding: 1.5rem; border-radius: 20px; border: 2px dashed var(--teal); position: relative; z-index: 1; }
+  #scratch-canvas { position:absolute; inset:0; border-radius:20px; cursor: crosshair; z-index: 2; }
 
-  /* ─────────────────────────────────────────
-     SCREEN 6 — FINALE
-  ───────────────────────────────────────── */
   #s6 { background: linear-gradient(160deg, #fff5f0 0%, #f5e8ff 50%, #e8f8ff 100%); }
   #s6 h1 { font-size: 2rem; color: var(--deep-pink); margin-bottom: 0.8rem; line-height: 1.3; }
   #confetti-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 5; }
-
-  /* Decoration animation */
-  .deco { position: fixed; pointer-events: none; font-size: 1.6rem; animation: floatUp 6s ease-in infinite; z-index: 1; opacity: 0; }
-  @keyframes floatUp {
-    0% { opacity:0; transform: translateY(0) rotate(0deg); }
-    10% { opacity: 0.7; }
-    90% { opacity: 0.3; }
-    100% { opacity:0; transform: translateY(-100vh) rotate(360deg); }
-  }
 </style>
 </head>
 <body>
@@ -178,13 +126,7 @@
     <span class="emoji-big">🐮</span>
     <div class="hearts-row">💕 🌸 💕</div>
     <h1>Hey, my Moo~</h1>
-    <p>
-     "I made something just for you."
-     </br>
-     "A little adventure, full of love."
-     </br>
-     "Ready to dive in, bae? 🐱✨"
-    </p>
+    <p>I made something just for you.<br>A little adventure, full of love.<br>Ready to dive in, bae? 🐱✨</p>
     <button class="btn btn-pink" onclick="goTo(2)">Let's go →</button>
   </div>
 </div>
@@ -246,14 +188,11 @@
     <div class="scratch-wrap">
       <div id="reveal-content">
         <h3>"You can't make someone love you..."</h3>
-        <p> 
-         just as you can't make water flow uphill. But you can remove the obstacles, and let it flow naturally.
-         <br>
-         - Alan Watts
-        </p>
-       </div>
-      <canvas id="scratch-canvas" width="340" height="200" style="display: none;"></canvas>    </div>
-     <p id="scratch-pct">Scratch away! ✨</p>
+        <p>just as you can't make water flow uphill. But you can remove the obstacles, and let it flow naturally.<br><br>- Alan Watts</p>
+      </div>
+      <canvas id="scratch-canvas"></canvas>
+    </div>
+    <p id="scratch-pct">Scratch away! ✨</p>
     <button class="btn btn-teal" id="skip-scratch" onclick="revealFull()">Reveal it all! 🌟</button>
   </div>
 </div>
@@ -272,7 +211,6 @@
 let currentScreen = 1;
 const totalScreens = 6;
 let confIdx = 1;
-let noClickCount = 0;
 let scratchDone = false;
 
 // Initialize Dots
@@ -299,24 +237,23 @@ function goTo(n) {
     overlay.style.display = 'none';
   }
   
+  if(n===1) { scratchDone = false; document.getElementById('scratch-canvas').style.display = 'block'; }
   if(n===3) showLines();
   if(n===4) resetConf();
   if(n===5) initScratch();
   if(n===6) launchConfetti();
 }
 
-// ── Pick-up lines ──
-const pickupLines = [
-  { emoji: "😊", text: "Together we'd be pretty cute. 🐮" },
-  { emoji: "🔍", text: "Are you Google? You have everything I search for. 💕" }
-];
 function showLines(){
+  const pickupLines = [
+    { emoji: "😊", text: "Together we'd be pretty cute. 🐮" },
+    { emoji: "🔍", text: "Are you Google? You have everything I search for. 💕" }
+  ];
   const pick = pickupLines[Math.floor(Math.random() * pickupLines.length)];
   document.getElementById('line-emoji').textContent = pick.emoji;
   document.getElementById('line-text').textContent = pick.text;
 }
 
-// ── Confessions Carousel ──
 function resetConf(){
   for(let i=1; i<=3; i++){
     document.getElementById('c'+i).classList.remove('active');
@@ -348,7 +285,6 @@ function nextConf(){
   }
 }
 
-// ── Runaway No Button ──
 const noBtn = document.getElementById('no-btn');
 let noBtnX = 0, noBtnY = 0;
 function randomPlaceNoBtn(){
@@ -363,44 +299,66 @@ document.addEventListener('mousemove', (e) => {
   if(dist < 120) randomPlaceNoBtn();
 });
 
-// ── Scratch Card Logic ──
 function initScratch(){
   if(scratchDone) return;
   const canvas = document.getElementById('scratch-canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = canvas.parentElement.offsetWidth;
-  canvas.height = 180;
+  canvas.height = canvas.parentElement.offsetHeight;
   ctx.fillStyle = '#d9b8f5';
   ctx.fillRect(0,0,canvas.width,canvas.height);
   ctx.globalCompositeOperation = 'destination-out';
   
-  canvas.onmousemove = (e) => {
-    if(e.buttons !== 1) return;
-    const r = canvas.getBoundingClientRect();
+  const scratch = (x, y) => {
     ctx.beginPath();
-    ctx.arc(e.clientX - r.left, e.clientY - r.top, 25, 0, Math.PI*2);
+    ctx.arc(x, y, 30, 0, Math.PI*2);
     ctx.fill();
     checkScratch(ctx, canvas);
   };
+
+  canvas.onmousemove = (e) => { if(e.buttons === 1) scratch(e.offsetX, e.offsetY); };
+  canvas.ontouchmove = (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    scratch(touch.clientX - rect.left, touch.clientY - rect.top);
+  };
 }
+
 function checkScratch(ctx, canvas){
     const d = ctx.getImageData(0,0,canvas.width,canvas.height).data;
     let count = 0;
     for(let i=3; i<d.length; i+=4) if(d[i] === 0) count++;
-    if(count > (d.length/4) * 0.6) revealFull();
+    if(count > (d.length/4) * 0.5) revealFull();
 }
+
 function revealFull(){
   scratchDone = true;
   document.getElementById('scratch-canvas').style.display = 'none';
+  document.getElementById('scratch-pct').textContent = "You revealed it! ❤️";
   const btn = document.getElementById('skip-scratch');
   btn.textContent = 'Next → 💕';
   btn.onclick = () => goTo(6);
 }
 
-// ── Background and Confetti ──
-function launchConfetti(){ /* Confetti effect code */ }
-function animateBg(){ /* Background effect code */ }
+// Background hearts
+const bgCanvas = document.getElementById('bg-canvas');
+const bc = bgCanvas.getContext('2d');
+bgCanvas.width = window.innerWidth; bgCanvas.height = window.innerHeight;
+const bgParticles = [];
+const bgEmojis = ['💕','🌸','✨','🌺'];
+for(let i=0;i<15;i++) bgParticles.push({x:Math.random()*bgCanvas.width, y:Math.random()*bgCanvas.height, vy:0.5+Math.random(), emoji:bgEmojis[Math.floor(Math.random()*bgEmojis.length)], size:20+Math.random()*20});
+function animateBg(){
+  bc.clearRect(0,0,bgCanvas.width,bgCanvas.height);
+  bgParticles.forEach(p=>{
+    p.y-=p.vy; if(p.y < -50) p.y = bgCanvas.height+50;
+    bc.font = p.size+'px serif'; bc.fillText(p.emoji, p.x, p.y);
+  });
+  requestAnimationFrame(animateBg);
+}
 animateBg();
+
+function launchConfetti(){ /* Simple finish effect */ }
 </script>
 </body>
 </html>
